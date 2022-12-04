@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="tem">
+        <div>
+            <h2>{{ message }}</h2>
+            <h2> {{ counter }}</h2>
+            <button @click='increment'>+1</button>
+            <button @click='decrement'>-1</button>
+        </div>
+    </template>
+
+    <div id="app"></div>
+    <script src="../js/vue.js"></script>
+
+    <script>
+        Vue.createApp({
+            template: "#tem",
+            data: function() {
+                return {
+                    message: "hellow World",
+                    counter: 100
+                }
+            },
+            methods: {
+                increment() {
+                    this.counter += 1
+                    console.log("点击了+1");
+                },
+                decrement() {
+                    this.counter -= 1
+                    console.log("点击了-1");
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
