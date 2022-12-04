@@ -55,3 +55,13 @@ methods 属性是一个对象，通常我们会在这个对象中定义很多方
 ```
 + 这些方法可以被绑定到template模板中；
 + 在该方法中，我们可以使用`this`关键字来直接访问到data中返回的对象的属性
+
+## vue 源码学习
++ git clone github.com/path
++ npm install -g yarn
++ yarn install
++ git init
++ git add .
++ git commit -m "fix(install): install dep"
++ git push
++ yarn dev
