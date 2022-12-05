@@ -33,9 +33,10 @@ MVC 是Model-View-ViewModel的简称
 
 ## template属性
 ```text
-Vue提供了两种方式使用template
-在createApp的对象中，我们需要传入的template以 # 开头，如果字符串是以 # 开始，那么它将被用作 querySelector，并且使用匹配元素的 innerHTML 作为模板字符串
+在createApp的对象中，我们需要传入的template以 # 开头，如果字符串是以 # 开始，
+那么它将被用作 querySelector，并且使用匹配元素的 innerHTML 作为模板字符串
 ```
+### Vue提供了两种方式使用template
 
 + 方式一：使用scripte标签，并且标记他的类型为 `x-template`
 + 方式二：使用任意标签（通常使用template标签，因为不会被浏览器渲染），设置ID；
