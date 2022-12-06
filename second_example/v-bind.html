@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <img v-bind:src="imgUrl" alt="">
+        <br>
+        <a v-bind:href="link">百度一下</a>
+        <br>
+        <a :href="link">百度一下</a>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    message: "Hello World",
+                    imgUrl: "https://img1.baidu.com/it/u=3965947288,3233120950&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
+                    link: "https://www.baidu.com",
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>
