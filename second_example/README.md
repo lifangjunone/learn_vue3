@@ -47,4 +47,4 @@
 + 在这个时候，我们就必须监听用户发生的事件，比如点击，拖拽，键盘事件等等；
 + 在Vue中如何监听事件呢，使用 v-on 指令
 
-<font face="黑体" color=green size=5>v-bind 绑属性和值，v-on 绑事件</font>
+<font color=#008000> v-bind 绑属性和值，v-on 绑事件</font>
