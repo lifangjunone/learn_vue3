@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mouseMove {
+            font-size: 35px;
+            background-color: aquamarine;
+            width: 300px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 完整写法： v-on：监听的事件="ethods中的方法" -->
+        <button v-on:click="btnClick">按钮1</button>
+        <br>
+        <br>
+        <button v-on:mousemove="mouseMove">按钮2</button>
+        <br>
+        <br>
+        <!-- 语法糖 -->
+        <div class="mouseMove" @mousemove="mouseMove">按钮3</div>
+        <br>
+        <!-- 绑定一个表达式 -->
+        <button @click="counter++">{{counter}}</button>
+        <br>
+        <br>
+        <!-- 绑定一个对象 -->
+        <div class="mouseMove" @="{click: btnClick, mousemove: mouseMove}">哈哈哈😭</div>
+        <br>
+        <div class="mouseMove" v-on="{click: btnClick, mousemove: mouseMove}">嘿嘿嘿😁</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    message: "Hello World",
+                    counter: 0
+                }
+            },
+            methods: {
+                btnClick() {
+                    console.log("按钮1发生点击")
+                },
+                mouseMove() {
+                    console.log("鼠标发生了移动");
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>

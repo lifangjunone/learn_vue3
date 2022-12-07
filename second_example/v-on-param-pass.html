@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 默认传入event对象，可以在方法中去获取  -->
+        <button @click="btnClick">按钮</button>
+        <br>
+        <!-- 当通过方法调用时可以传递其他参数，当要传递event时， 需要 $event 方式进行传递 -->
+        <button @click="btn2Click($event, '张三', 19)">按钮</button>
+        <br>
+        <div @click="divClick2">
+            <!-- v-on 修饰符， 停止冒泡 -->
+            <button @click.stop="btnClick2">按钮</button>
+        </div>
+        <br>
+        <input type="text" @keyup.enter="enterKeyup">
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    message: "Hello World"
+                }
+            },
+            methods: {
+                enterKeyup(event) {
+                    console.log('enter key up', event.target.value);
+                },
+                divClick2() {
+                    console.log('点击div');
+                },
+                btnClick2() {
+                    console.log("点击button")
+                },
+                btnClick(event) {
+                    console.log(event)
+                },
+                btn2Click(event, name, age) {
+                    console.log(name, age, event);
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- :style="{cssPropertyName: cssPropertyValue}" -->
+        <div :style="{color: 'red', fontSize: '30px', backgroundColor: myPink, 
+        display: 'flex', justifyContent:'center', alignItems:'center'}"> 哈哈哈 </div>
+        <br>
+        <!-- 绑定一个data中的属性值，并且是一个对象 -->
+        <div :style="styleObj"> 哈哈哈 </div>
+        <br>
+        <!-- 数组 -->
+        <div :style="[{color: 'yellow', fontSize: '30px'},{display:'flex',justifyContent:'center'}, {backgroundColor:'pink'}]">嘿嘿</div>
+        <br>
+        <div :style="[stypeObj1, styleObj2]">嘿嘿</div>
+        <br>
+        <!-- 调用一个方法 -->
+        <div :style="getStyleObj()"> 哈哈哈 </div>
+        <br>
+        <!-- 动态绑定属性 -->
+        <div :[name]="value">啦啦啦</div>
+        <br>
+        <!-- 属性直接绑定一个对象 -->
+        <div v-bind="info">当当当</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    message: "Hello World",
+                    info: {
+                        name: 'zs',
+                        age: 30,
+                        height: 1.78,
+                        style: {
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            backgroundColor: 'pink',
+                            fontSize: '35px'
+                        }
+                    },
+                    name: 'style',
+                    value: {
+                        fontSize: '60px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    },
+                    styleObj: {
+                        fontSize: '50px',
+                        fontWeight: 700,
+                        backgroundColor: 'green',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    },
+                    myPink: 'pink',
+                    stypeObj1: {
+                        color: 'blue',
+                        fontSize: '40px'
+                    },
+                    styleObj2: {
+                        textDecoration: "underline",
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }
+                }
+            },
+            methods: {
+                getStyleObj() {
+                    return {
+                        fontSize: '50px',
+                        fontWeight: 700,
+                        backgroundColor: 'green',
+                        display:'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>
