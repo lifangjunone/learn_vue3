@@ -1,0 +1,34 @@
+table {
+    border: 1px solid #e9e9e9;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.my-div {
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+
+th, td {
+    padding: 8px 16px;
+    border: 1px solid #e9e9e9;
+}
+
+th {
+    background-color: pink;
+    color: green;
+    font-weight: 600;
+}
+
+.counter {
+    margin: 0 5px;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 400px;
+    font-weight:bold;
+    font-size: larger;
+}
