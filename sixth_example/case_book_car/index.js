@@ -50,6 +50,23 @@ Vue.createApp({
             total: 0
         }
     },
+    computed: {
+        totalPrice() {
+            let finallPrice = 0
+            for (let book of this.books) {
+                finallPrice += book.price * book.count
+            }
+            return "¥" + finallPrice
+        },
+        // Vue3 不支持过滤器了， 推荐两种做法: 计算属性、使用全局的方法
+        finlterBooks() {
+            return this.books.map(item => {
+                const newItem = Object.assign({}, item)
+                newItem.price = "¥" + item.price
+                return newItem
+            })
+        }
+    },
     methods: {
         decrease(index) {
             if (this.books[index].count >0) {
@@ -61,13 +78,16 @@ Vue.createApp({
         },
         calcSum() {
             let sumIs = 0
-            for (let item in this.books) {
-                sumIs += this.books[item].count
+            for (let book of this.books) {
+                sumIs += book.count * book.price
             }
-            return sumIs
+            return "¥" + sumIs
         },
         deleteBook(index) {
             this.books.splice(index, 1)
+        },
+        formatPrice(price) {
+            return "¥" + price
         }
     },
     watch: {

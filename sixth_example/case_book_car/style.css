@@ -7,7 +7,7 @@ table {
 .my-div {
     display: flex;
     justify-content: center;
-    padding: 60px;
+    margin-top: 100px;
 }
 
 th, td {
@@ -31,4 +31,8 @@ th {
     margin-right: 400px;
     font-weight:bold;
     font-size: larger;
+}
+
+h2 {
+    margin-left: 450px;
 }

@@ -26,7 +26,8 @@
                         <td>{{ index + 1}}</td>
                         <td>{{ book.name }}</td>
                         <td>{{ book.date}}</td>
-                        <td>{{ book.price }}</td>
+                        <!-- <td>{{ book.price }}</td> -->
+                        <td>{{ formatPrice(book.price) }}</td>
                         <td>
                             <button :disabled="book.count <= 0" @click="decrease(index)">-</button>
                             <span class="counter">{{ book.count}}</span>
@@ -39,6 +40,7 @@
                 </tbody>
             </table>
         </div>  
+        <h2>总价：{{totalPrice}}</h2>
         <div class="total">
             总价： {{total}}
         </div>
