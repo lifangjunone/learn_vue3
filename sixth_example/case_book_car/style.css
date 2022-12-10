@@ -36,9 +36,3 @@ th {
 h2 {
     margin-left: 450px;
 }
-
-.block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
