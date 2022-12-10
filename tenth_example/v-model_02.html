@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid gainsboro;
+        }
+        th, td {
+            padding: 8px 16px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 多行文本框 -->
+        <textarea name="info" id="info" cols="30" rows="10" v-model="info"></textarea>
+        <h2>{{info}}</h2>
+        <br>
+        <!-- 单选框 -->
+        <label for="agree">
+            <input id="agree" type="checkbox" v-model="isAgree"> 同意
+        </label>
+        <h2>{{isAgree}}</h2>
+        <!-- 多选框 -->
+        <span>您的爱好：</span>
+        <label for="basketball">
+            <input id="basketball" type="checkbox" v-model="hobbies" value="basketball"> 篮球
+        </label>
+        <label for="football">
+            <input id="football" type="checkbox" v-model="hobbies" value="football"> 篮球
+        </label>
+        <label for="tennis">
+            <input id="tennis" type="checkbox" v-model="hobbies" value="tennis"> 篮球
+        </label>
+        <ul>
+            <li v-for="item in hobbies">{{item}}</li>
+        </ul>
+        <table>
+            <thead>
+                <th>序号</th>
+                <th>爱好</th>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in hobbies">
+                    <td>{{index}}</td>
+                    <td>{{item}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <!-- radio -->
+        <label for="man">
+            <input id="man" type="radio" v-model="gender" value="man"> 男
+        </label>
+        <label for="woman">
+            <input id="woman" type="radio" v-model="gender" value="woman"> 女
+        </label>
+        <h2>{{gender}}</h2>
+        <!-- 选择 -->
+        <span>选择水果</span>
+        <select v-model="fruit"  multiple size="2">
+            <option value="apple">苹果</option>
+            <option value="arange">橘子</option>
+            <option value="banana">香蕉</option>
+        </select>
+        <h2>{{fruit}}</h2>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    info: "",
+                    isAgree: false,
+                    hobbies: [],
+                    gender: '',
+                    fruit: []
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>
