@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        请输入您的问题
+        <br>
+        <input type="text" v-model="question">
+        <button @click="queryAnswer">查找答案</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    question: "Hello World"
+                }
+            },
+            methods: {
+                queryAnswer() {
+                    console.log(`您的问题:${this.question}的答案是:哈哈哈`);
+                }
+            },
+            watch: {
+                question(newValue, oldValue) {
+                    console.log("旧值: ", oldValue, "新值: ", newValue)
+                    this.queryAnswer
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>{{info.name}}</h2>
+        <button @click="changeInfo">改变Info</button>
+        <br>
+        <button @click="changeInfoName">改变Info.name</button>
+        <br>
+        <button @click="realChangeInfoName"> 真正修改info.name 的值</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    info: {name: "张三", age: 18}
+                }
+            },
+            watch: {
+                // 默认情况下我们的监听器只会针对监听的数据本身的改变做监听，数据内部发生的改变是不能被监听的
+                // info(newInfo, oldInfo) {
+                //     console.log("新值：", newInfo, "旧值：", oldInfo);
+                // },
+                info: {
+                    handler(newInfo, oldInfo) {
+                        console.log("新值：",newInfo, "旧值：", oldInfo);
+                    },
+                    deep: true, // 深度监听
+                    immediate: true // 立即执行
+                }
+            },
+            methods: {
+                changeInfo() {
+                    this.info = {name: "李四"}
+                },
+                changeInfoName() {
+                    this.info.name = "王五"
+                },
+                realChangeInfoName() {
+                    this.info.name = "赵六"
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>    
+</body>
+</html>
