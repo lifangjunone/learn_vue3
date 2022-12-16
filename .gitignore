@@ -25,3 +25,6 @@ hs_err_pid*
 
 # not need folder
 .vscode
+node_modules
+./*/node_modules
+
