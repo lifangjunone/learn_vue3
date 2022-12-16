@@ -27,6 +27,6 @@ hs_err_pid*
 .vscode
 node_modules
 ./*/node_modules
-./*/dist
-./*/build
+*/build
+*/dist
 
