@@ -17,13 +17,24 @@ module.exports = {
         },
         {
           test: /\.(jpg|png|gif|svg|jpeg)$/,
-          use:{ 
-            loader: "file-loader", 
-            options: {
-              esModule: false,
-            },
+          type: "asset/resource",
+          parser: {
+            dataUrlCondition: {
+                maxSize: 100*1024
+            }
           },
-          type: "javascript/auto"
+          generator: {
+            filename: "images/[name]_[hash:8][ext]"
+          }
+        //   use:{ 
+        //     loader: "file-loader", 
+        //     options: {
+        //         outputPath: "images",
+        //         name: "[name]-[hash:6].[ext]",
+        //         esModule: false,
+        //     },
+        //   },
+        //   type: "javascript/auto"
         }
       ],
   },
