@@ -16,17 +16,25 @@ module.exports = {
         generator: {
           filename: "images/[name]_[hash:8][ext]",
         },
-        parser: {
-          dataUrlCondition: {
-            maxSize: 100 * 1024,
-          },
-        },
       },
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+      },
+      // {
+      //   test: /\.js$/,
+      //   use: {
+      //     loader: "babel-loader",
+      //     options: {
+      //       presets: ["@babel/preset-env"],
+      // plugins: [
+      // "@babel/plugin-transform-arrow-functions",
+      // "@babel/plugin-transform-block-scoping",
+      // ],
+      //     },
+      //   },
+      // },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(), 
-    new HtmlWebpaackPlugin()
-  ],
-
+  plugins: [new CleanWebpackPlugin(), new HtmlWebpaackPlugin()],
 };

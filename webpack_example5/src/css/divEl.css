@@ -1,0 +1,6 @@
+.divEl {
+  background-image: url("../img/2.jpg");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+}
