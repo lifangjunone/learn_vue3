@@ -1,6 +1,6 @@
 // import "./js/element";
 
-import { createApp } from "vue/dist/vue.esm-bundler";
+import { createApp } from "vue";
 import App from "./vue/App.vue"
 
 
