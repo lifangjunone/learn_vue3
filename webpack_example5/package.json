@@ -16,6 +16,7 @@
     "@babel/plugin-transform-arrow-functions": "^7.18.6",
     "@babel/plugin-transform-block-scoping": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
+    "@vue/compiler-sfc": "^3.2.45",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
     "clean-webpack-plugin": "^4.0.0",
@@ -31,6 +32,7 @@
     "postcss-preset-env": "^7.8.3",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
+    "vue-loader": "^17.0.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
