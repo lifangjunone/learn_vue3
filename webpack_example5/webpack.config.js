@@ -7,12 +7,30 @@ const {VueLoaderPlugin} = require("vue-loader/dist/index")
 
 module.exports = {
   // production
+  target: "web",
   mode: "development",
   devtool: "source-map",
+  // watch: true,
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "./build"),
     filename: "js/bundle.js",
+  },
+  devServer : {
+    static: "./abc",
+    hot: true,
+    host: "127.0.0.1",
+    port: 7900,
+    open: true,
+    compress: true,
+    proxy: {
+      "/api": {
+          target: "https://www.json.cn/",
+          pathRewrite: {
+            "^/api": ''
+          }
+      }
+    }
   },
   module: {
     rules: [

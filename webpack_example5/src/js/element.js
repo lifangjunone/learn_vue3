@@ -10,3 +10,5 @@ divEl.innerHTML = "Hello World";
 
 document.body.appendChild(divEl);
 document.body.appendChild(iEl);
+
+console.log("cccc");
