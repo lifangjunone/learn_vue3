@@ -9,6 +9,7 @@ npm install vue-loader@next -D
 npm install @vue/compiler-sfc -D
 npm install webpack-dev-server -D
 npm install axios
+npm install webpack-merge -D
 ```
 
 ## DevServer

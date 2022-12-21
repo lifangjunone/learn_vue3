@@ -1,35 +1,23 @@
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpaackPlugin = require("html-webpack-plugin");
 const { DefinePlugin } = require("webpack");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const {VueLoaderPlugin} = require("vue-loader/dist/index")
+const {VueLoaderPlugin} = require("vue-loader/dist/index");
+const { dirname } = require("path");
 
 module.exports = {
   // production
   target: "web",
-  mode: "development",
-  devtool: "source-map",
   // watch: true,
   entry: "./src/main.js",
   output: {
-    path: path.resolve(__dirname, "./build"),
+    path: path.resolve(__dirname, "../build"),
     filename: "js/bundle.js",
   },
-  devServer : {
-    static: "./abc",
-    hot: true,
-    host: "127.0.0.1",
-    port: 7900,
-    open: true,
-    compress: true,
-    proxy: {
-      "/api": {
-          target: "https://www.json.cn/",
-          pathRewrite: {
-            "^/api": ''
-          }
-      }
+  resolve: {
+    extensions: [".js", ".vue", ".ts"],
+    alias: {
+      "@": path.resolve(__dirname, "../src"),
+      "js": path.resolve(__dirname, "../src/js")
     }
   },
   module: {
@@ -68,7 +56,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpaackPlugin({
       template: "./public/index.html",
       title: "my title",
@@ -77,17 +64,6 @@ module.exports = {
       BASE_URL: "'./'",
       __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false,
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "public",
-          to: "./",
-          globOptions: {
-            ignore: ["**/index.html"],
-          },
-        },
-      ],
     }),
     new VueLoaderPlugin()
   ],

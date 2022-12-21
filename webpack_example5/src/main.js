@@ -1,13 +1,13 @@
 // import "./js/element";
 
 import { createApp } from "vue";
-import App from "./vue/App.vue"
+import App from "./vue/App"
 import axios from 'axios'
 
-import "./js/element"
+import "js/element"
 
 if (module.hot) {
-    module.hot.accept("./js/element.js", ()=>{
+    module.hot.accept("js/element.js", ()=>{
         console.log("element module is updated")
     })
 }
