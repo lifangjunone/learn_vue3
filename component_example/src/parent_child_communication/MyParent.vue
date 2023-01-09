@@ -4,6 +4,7 @@
       <my-child name="niubi" title="我是标题1" content="我是内容1"></my-child>
       <my-child title="我是标题2" content="我是内容2"></my-child>
       <my-child title="我是标题3"></my-child>
+      <hello-world :name="name"></hello-world>
     </div>
     <hr>
     <div>
@@ -22,8 +23,9 @@
 
 <script>
 import MyChild from './MyChild.vue'
+import HelloWorld from './HelloWorld.vue'
   export default {
-    components: { MyChild },
+    components: { MyChild, HelloWorld },
     data() {
       return {
          data_title: "我是data中的标题",
@@ -31,7 +33,8 @@ import MyChild from './MyChild.vue'
          message: {
           title: "我是对象里面的标题",
           content: "我是对象里面的内容"
-         }
+         },
+         name: "张三"
       }
     }
   }
