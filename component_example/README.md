@@ -32,4 +32,5 @@ npm run build
       - Function
       - Synbol
   - 子 -> 父: 通过 $emit 触发事件
+    - $emits
 - 非父子组之间的通信
