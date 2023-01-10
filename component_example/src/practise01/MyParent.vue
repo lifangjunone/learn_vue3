@@ -1,7 +1,7 @@
 <template>
   <div>
     <my-child :titles="dataTitles" @clickTitle="changeContent"></my-child>
-    <h2>{{ dataContents[currentIndex] }}</h2>
+    <div class="content">{{ dataContents[currentIndex] }}</div>
   </div>
 </template>
 
@@ -30,5 +30,12 @@ import MyChild from './MyChild.vue';
 </script>
 
 <style scoped>
-
+  .content {
+    top: 50%;
+    left: 50;
+    color: lime;
+    font-size: large;
+    padding: 20% 50%;
+    background: ghostwhite;
+  }
 </style>

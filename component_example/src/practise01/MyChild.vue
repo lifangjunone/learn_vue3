@@ -47,18 +47,28 @@
 <style scoped>
   .tab-control {
     display: flex;
+    padding-top: 5px;
   }
   .tab-control-item {
     flex: 1;
     text-align: center;
+    color: white;
+    font-size: larger;
+    background: pink;
+    padding-bottom: 2px;
+    border-top: 3px solid greenyellow;
+    border-left: 3px solid greenyellow;
+    border-right: 3px solid greenyellow;
+    border-bottom: 3px solid greenyellow;
+    border-radius: 10px;
   }
 
   .tab-control-item.active {
-    color: red;
+    color: yellow;
   }
 
   .tab-control-item.active span {
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid yellow;
     padding: 3px 10px;
   }
 </style>
