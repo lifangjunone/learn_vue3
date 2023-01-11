@@ -1,11 +1,13 @@
 <template>
   <div>
+    <button @click="addName">+name</button>
     <my-home></my-home>
   </div>
 </template>
 
 <script>
 import MyHome from './MyHome.vue';
+import {computed} from 'vue'
   export default {
     components: {
       MyHome
@@ -15,12 +17,17 @@ import MyHome from './MyHome.vue';
         name: "张三",
         age: 18,
         sex: "男",
-        hobby: this.hobby
+        hobby: computed(() => this.hobby) 
        }
-    },
+    }, 
     data() {
       return {
         hobby: ["吹牛", "夸人", "打麻将"]
+      }
+    },
+    methods: {
+      addName() {
+        this.hobby.push("最牛逼")
       }
     }
   }

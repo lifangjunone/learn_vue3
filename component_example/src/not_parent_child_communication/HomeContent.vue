@@ -5,7 +5,7 @@
     <div>{{ sex }}</div>
     <hr>
     <div>
-      <div v-for="item in hobby" :key="item">
+      <div v-for="item in hobby.value" :key="item">
         <span>{{ item }}</span> 
       </div>
     </div>
