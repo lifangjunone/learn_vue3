@@ -1,4 +1,4 @@
 import { createApp } from "vue"
-import App from "./not_parent_child_communication/App.vue"
+import App from './event_bus/App.vue'
 
 createApp(App).mount("#app")
