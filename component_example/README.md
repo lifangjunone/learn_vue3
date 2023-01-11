@@ -34,3 +34,5 @@ npm run build
   - 子 -> 父: 通过 $emit 触发事件
     - $emits
 - 非父子组之间的通信
+  - 祖   传递: 通过 provide
+  - 后代 接受:  通过 inject
