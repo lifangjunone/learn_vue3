@@ -15,12 +15,13 @@
     <template v-else>
       <my-category></my-category>
     </template> -->
-
+    <keep-alive include="my-home,my-about">
     <component :is="currentItem"
       :name=name
       :age=age
       @clickPage="myClickPage"
     ></component>
+    </keep-alive>
   </div>
 </template>
 

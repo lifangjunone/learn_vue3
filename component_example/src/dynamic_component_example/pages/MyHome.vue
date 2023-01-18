@@ -7,6 +7,7 @@
 
 <script>
   export default {
+    name: "my-home",
     props: {
       name: {
         type: String,

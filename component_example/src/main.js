@@ -1,4 +1,3 @@
 import { createApp } from "vue"
-import App from "./dynamic_component_example/App.vue"
-
+import App from "./v-model_example/App.vue"
 createApp(App).mount("#app")

@@ -1,16 +1,15 @@
 <template>
   <div>
-    <h2 @click="counter ++">我是About</h2>
-    {{ counter }}
+    <h2>我是组件</h2>
+    <h2>{{ message }}</h2>
   </div>
 </template>
 
-<script> 
+<script>
   export default {
-    name: "my-about",
-    data()  {
+    data() {
       return {
-        counter: 0
+        message: "我是组件实例"
       }
     }
   }
