@@ -1,4 +1,4 @@
 import { createApp } from "vue"
-import App from './event_bus/App.vue'
+import App from "./dynamic_component_example/App.vue"
 
 createApp(App).mount("#app")
